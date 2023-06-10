@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://45.12.75.188:5000/.netlify/functions',
+        target: 'http://45.12.75.188:5000/',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       }

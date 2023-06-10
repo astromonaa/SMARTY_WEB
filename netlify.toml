@@ -1,8 +1,8 @@
 [[redirects]]
 force = true
-from = '/api/*'
+from = '/api/voices'
 status = 200
-to = '/.netlify/functions/:splat'
+to = 'http://45.12.75.188:5000/voices'
 
 [[redirects]]
 from = '/*'
