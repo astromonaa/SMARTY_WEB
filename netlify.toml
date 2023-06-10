@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api/voices"
-  to = "/"
+  to = "http://45.12.75.188:5000/voices"
   status = 301
   force = false
   query = {path = ":path"}
