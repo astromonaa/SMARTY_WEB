@@ -1,3 +1,0 @@
-[[redirects]]
-  from = "/api/voices"
-  to = "http://45.12.75.188:5000/voices"
