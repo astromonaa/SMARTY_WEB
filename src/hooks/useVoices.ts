@@ -1,6 +1,6 @@
 import { onMounted, ref } from "vue"
-import axios from 'axios'
 import { IVoice } from "../types/types"
+import $api from "../api/api"
 
 
 export const useVoices = () => {
@@ -8,7 +8,7 @@ export const useVoices = () => {
 
   const fetchVoices = async () => {
     try {
-      const res = await axios.get<IVoice[]>('http://45.12.75.188:5000/voices')
+      const res = await $api.get<IVoice[]>('/voices')
       voices.value = res.data
     }catch(e) {
       console.log(e);
