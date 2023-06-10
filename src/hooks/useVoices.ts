@@ -8,7 +8,7 @@ export const useVoices = () => {
 
   const fetchVoices = async () => {
     try {
-      const res = await $api.get<IVoice[]>('/api/voices')
+      const res = await $api.get<IVoice[]>('/voices')
       voices.value = res.data
     }catch(e) {
       console.log(e);
