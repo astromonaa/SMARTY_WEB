@@ -1,12 +1,20 @@
 import axios from 'axios'
 
 const $api = axios.create({
-  baseURL: 'http://45.12.75.188:5000',
+  baseURL: '/',
   proxy: {
-    host: 'localhost',
-    port: 5173,
+    host: '45.12.75.188',
+    port: 5000,
     protocol: 'http'
   }
 })
+
+$api.interceptors.request.use(request => {
+  console.log(request?.url);
+  
+  request.url = request?.url?.replace(/^\/api/, 'http://45.12.75.188:5000');
+  return request;
+});
+
 
 export default $api
