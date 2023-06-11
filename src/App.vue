@@ -27,9 +27,7 @@ onMounted(() => {
   tg.expand()
   tg.MainButton.show()
   tg.MainButton.onClick(() => {
-    debugger
     tg.sendData("some string that we need to send")
-    (window as any).Telegram.WebApp.sendData("some string that we need to send")
   })
 })
 
@@ -38,7 +36,7 @@ const sendDataToTelegram = (id: number) => {
   tg.sendData(String(id));
 };
 
-tg.onEvent('mainButtonClicked', function(){
+(window as any).Telegram.WebApp.onEvent('mainButtonClicked', function(){
 	tg.sendData("some string that we need to send"); 
 	//при клике на основную кнопку отправляем данные в строковом виде
 });
