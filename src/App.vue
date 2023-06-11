@@ -21,9 +21,16 @@ import { useVoices } from "./hooks/useVoices";
 const { voices } = useVoices();
 const tg = (window as any).Telegram.WebApp;
 
+tg.ready(() => tg.expand())
+
 const sendDataToTelegram = (id: number) => {
   tg.sendData(String(id));
 };
+
+tg.WebApp.onEvent('mainButtonClicked', function(){
+	tg.sendData("some string that we need to send"); 
+	//при клике на основную кнопку отправляем данные в строковом виде
+});
 </script>
 
 <style module>
