@@ -26,6 +26,7 @@ onMounted(() => {
   tg.ready()
   tg.expand()
   tg.MainButton.show()
+  tg.MainButton.onClick(() => tg.sendData("some string that we need to send"))
 })
 
 
