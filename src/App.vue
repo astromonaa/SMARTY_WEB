@@ -26,7 +26,11 @@ onMounted(() => {
   tg.ready()
   tg.expand()
   tg.MainButton.show()
-  tg.MainButton.onClick(() => tg.sendData("some string that we need to send"))
+  tg.MainButton.onClick(() => {
+    debugger
+    tg.sendData("some string that we need to send")
+    (window as any).Telegram.WebApp.sendData("some string that we need to send")
+  })
 })
 
 
