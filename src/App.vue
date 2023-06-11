@@ -17,14 +17,17 @@
 
 <script setup lang="ts">
 import { useVoices } from "./hooks/useVoices";
+import { onMounted } from 'vue';
 
 const { voices } = useVoices();
 const tg = (window as any).Telegram.WebApp;
 
-tg.ready(() => {
-  tg.MainButton.show()
+onMounted(() => {
+  tg.ready()
   tg.expand()
+  tg.MainButton.show()
 })
+
 
 const sendDataToTelegram = (id: number) => {
   tg.sendData(String(id));
