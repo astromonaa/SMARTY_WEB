@@ -22,7 +22,7 @@ const { voices } = useVoices();
 const tg = (window as any).Telegram.WebApp;
 
 const sendDataToTelegram = (id: number) => {
-  tg.sendData(id);
+  tg.sendData(String(id));
 };
 </script>
 
