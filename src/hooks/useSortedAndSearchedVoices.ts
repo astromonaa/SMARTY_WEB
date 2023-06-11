@@ -9,9 +9,6 @@ export const useSortedAndSearchedVoices = (voices:Ref<IVoice[]>) => {
     sex.value = value
   }
 
-  console.log(voices);
-  
-
   const sortedAndSearchedVoices = computed(() => voices.value.filter(voice => {
     if (sex.value) {
       return voice.sex === sex.value && 

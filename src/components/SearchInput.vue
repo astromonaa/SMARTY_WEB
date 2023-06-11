@@ -10,7 +10,7 @@ const value = ref('')
   defineProps({
     modelValue: String
   })
-  const emit = defineEmits('update:modelValue')
+  const emit = defineEmits(['update:modelValue'])
 
   const debounce = useDebounce(value, 500)
 
