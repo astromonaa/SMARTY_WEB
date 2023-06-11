@@ -1,24 +1,29 @@
 <template>
   <ul :class="$style.voices">
-    <li v-for="voice in voices" :key="voice.voice_id" :class="$style['voice-item']">
+    <li
+      v-for="voice in voices"
+      :key="voice.voice_id"
+      :class="$style['voice-item']"
+      @click="sendDataToTelegram(voice.voice_id)"
+    >
       <p :class="$style['voice-item-block']">
         <span class="bold">{{ voice.name?.RU }}</span>
         <small class="gray">{{ voice.name.EN }}</small>
       </p>
-      <p :class="$style['voice-item-block']">{{ voice.description.RU}}</p>
+      <p :class="$style['voice-item-block']">{{ voice.description.RU }}</p>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-
-import { onUpdated } from "vue";
 import { useVoices } from "./hooks/useVoices";
 
 const { voices } = useVoices();
-const tg = (window as any).Telegram.WebApp
+const tg = (window as any).Telegram.WebApp;
 
-onUpdated(() => console.log(tg))
+const sendDataToTelegram = (id: number) => {
+  tg.sendData(id);
+};
 </script>
 
 <style module>
