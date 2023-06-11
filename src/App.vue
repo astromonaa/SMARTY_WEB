@@ -11,11 +11,12 @@
 </template>
 
 <script setup lang="ts">
+
 import { onUpdated } from "vue";
 import { useVoices } from "./hooks/useVoices";
 
 const { voices } = useVoices();
-const tg = window.Telegram?.WebApp
+const tg = (window as any).Telegram.WebApp
 
 onUpdated(() => console.log(tg))
 </script>
