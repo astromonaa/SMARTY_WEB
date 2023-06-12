@@ -25,6 +25,8 @@ const value = ref('')
   padding: 10px;
   transition: all 0.3s;
   border-radius: 0.2em;
+  background-color: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
 }
 .input:focus {
   border-color: blue;

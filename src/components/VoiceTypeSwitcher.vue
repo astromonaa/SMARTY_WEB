@@ -33,7 +33,7 @@ defineProps({
     padding: 10px;
   }
   .active {
-    background-color: rgb(79, 79, 240);
+    background-color: rgb(0, 255, 0);
     color: #fff;
     border: none;
   }
